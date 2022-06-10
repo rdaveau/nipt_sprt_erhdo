@@ -83,4 +83,11 @@ If the DPN sample is **not** available, use the `batch2json_rxli-2.pl` script in
 ### Autosomal inheritance
 Same as above, use `batch2json-1.pl` if the DPN sample is available, `batch2json-2.pl` otherwise. 
 
+## Pipeline versions
+Specific analysis pipelines have been written in dedicated **snakefiles**. If you need to know more on how to use snakemake please refer to the official [Snakemake website](https://snakemake.github.io/). For each inheritance mode (**X-linked** and **autosomal**) there are 2 different snakefiles depending on whether the DPN sample is available or not:
+- v2\[\_rxli\].Snakefile: when DPN is available.
+- v3\[\_rxli\].Snakefile: when DPN is **not** available.
 
+All pipelines use only open source software, ie. [BBDuk](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/bbduk-guide/), [BWA-MEM](https://janis.readthedocs.io/en/latest/tools/bioinformatics/bwa/bwamem.html), [Samtools](https://www.htslib.org/), [Picard Tools](https://broadinstitute.github.io/picard/), [bedtools](https://bedtools.readthedocs.io/en/latest/index.html) and [GATK)](https://gatk.broadinstitute.org/hc/en-us). Please refer to the official websites of these tools for more information.
+
+One step of the pipeline also uses the check_variants.py software which is governed by the [CeCILL](http://www.cecill.info/) license. One can  use, modify and/or redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS and INRIA.
